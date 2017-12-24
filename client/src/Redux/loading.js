@@ -6,3 +6,5 @@ export default (state = true, action) => {
             return state;
     }
 }
+
+export const loadComplete = () => ({ type: "COMPLETE" });
