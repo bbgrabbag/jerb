@@ -20,7 +20,12 @@ const PostSchema = new Schema({
         type: Boolean,
         default: false
     },
-    notes: String
+    notes: String,
+    user:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "user",
+        required: true
+    }
 }, { timestamps: true });
 
 module.exports = mongoose.model("posting", PostSchema);

@@ -8,9 +8,8 @@ authRoutes.route("/signup")
     .post((req, res) => {
         UserModel.findOne({ username: req.body.username }, (err, user) => {
             if (err) {
-                res.send({
+                res.status(500).send({
                     success: false,
-                    code: 400,
                     msg: err.message
                 });
             }
@@ -18,22 +17,20 @@ authRoutes.route("/signup")
                 let newUser = new UserModel(req.body);
                 newUser.save((err, savedUser) => {
                     if (err) {
-                        return res.send({
+                        return res.status(500).send({
                             success: false,
-                            code: 400,
                             msg: err.message
                         });
                     }
-                    res.send({
+                    res.status(200).send({
                         success: true,
                         user: savedUser.withoutPwd(),
                         token: jwt.sign(savedUser.withoutPwd(), config.secret, { expiresIn: 60 * 60 })
                     });
                 });
             } else {
-                res.send({
+                res.status(401).send({
                     success: false,
-                    code: 401,
                     msg: "User already exists!"
                 });
             }
@@ -43,29 +40,26 @@ authRoutes.route("/login")
     .post((req, res) => {
         UserModel.findOne({ username: req.body.username }, (err, user) => {
             if (err) {
-                res.send({
+                res.status(500).send({
                     success: false,
-                    code: 400,
                     msg: err.message
                 });
             } else {
                 if (!user) {
-                    res.send({
+                    res.status(404).send({
                         success: false,
-                        code: 404,
                         msg: "User not found!"
                     });
                 } else {
                     if (user.auth(req.body.password)) {
-                        res.send({
+                        res.status(200).send({
                             success: true,
                             user: user.withoutPwd(),
                             token: jwt.sign(user.withoutPwd(), config.secret, { expiresIn: 60 * 60 })
                         });
                     } else {
-                        res.send({
+                        res.status(401).send({
                             success: false,
-                            code: 401,
                             msg: "Invalid password!"
                         })
                     }
