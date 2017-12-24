@@ -8,8 +8,10 @@ function Nav(props) {
         <nav>
             <Link to="/">Sign Up</Link>
             <Link to="/login">Log In</Link>
+            <Link to="/profile-page">Profile</Link>
             <Link to="/add-post">+</Link>
             <Link to="/view-posts">Postings</Link>
+            <button>Logout</button>
         </nav>
     )
 }

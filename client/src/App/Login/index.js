@@ -1,13 +1,58 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 
-export default class Login extends Component {
+import { connect } from "react-redux";
+import { login } from "../../Redux/auth";
+
+class Login extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            inputs: {
+                username: "",
+                password: "",
+            }
+        }
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    handleChange(e) {
+        e.persist();
+        this.setState((prevState) => {
+            return {
+                inputs: {
+                    ...prevState.inputs,
+                    [e.target.name]: e.target.value
+                }
+            }
+        })
+    }
+    handleSubmit(e) {
+        e.preventDefault();
+        this.props.login(this.state.inputs, this.props.history);
+        this.clearInputs();
+    }
+    clearInputs() {
+        this.setState({
+            inputs: {
+                username: "",
+                password: "",
+            }
+        });
+    }
+
     render() {
+        let inputs = this.state.inputs;
         return (
-            <form>
-                <input type="text"/>
-                <input type="text"/>
-                <button>Submit</button>
+            <form onSubmit={this.handleSubmit}>
+                <input onChange={this.handleChange} value={inputs.username} name="username" type="text" placeholder="@" />
+                <input onChange={this.handleChange} value={inputs.password} name="password" type="password" placeholder="#" />
+                <button type="submit">Submit</button>
+                <p>{this.props.errMsg}</p>
             </form>
         )
     }
 }
+
+const mapStateToProps = state => ({ errMsg: state.auth.errMsg.login })
+
+export default connect(mapStateToProps, { login })(Login);
