@@ -15,6 +15,7 @@ import ProfilePage from "./ProfilePage";
 import PostList from "./PostList";
 import PostForm from "./PostForm";
 import LoadingPage from "./LoadingPage";
+import ProtectedRoute from "./ProtectedRoute";
 
 class App extends Component {
     componentDidMount() {
@@ -31,9 +32,9 @@ class App extends Component {
                         <Switch>
                             <Route exact path='/' component={Signup} />
                             <Route path='/login' component={Login} />
-                            <Route path='/add-post' component={PostForm} />
-                            <Route path='/profile-page' component={ProfilePage} />
-                            <Route path='/view-posts' component={PostList} />
+                            <ProtectedRoute path='/add-post' component={PostForm} />
+                            <ProtectedRoute path='/profile-page' component={ProfilePage} />
+                            <ProtectedRoute path='/view-posts' component={PostList} />
                         </Switch>
                     }
                 </div>

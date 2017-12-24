@@ -28,6 +28,8 @@ export default (state = defaultState, action) => {
                 user: null,
                 errMsg
             }
+        case "LOGOUT":
+            return { ...defaultState };
         default:
             return state;
     }
@@ -96,6 +98,15 @@ export const login = (credentials, history) => {
                 let msg = "Invalid username or password!";
                 dispatch(handleErr(msg, "login"));
             });
+    }
+}
+
+export const logout = () => {
+    return dispatch => {
+        localStorage.removeItem("token");
+        dispatch({
+            type: "LOGOUT"
+        });
     }
 }
 

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 
 import { connect } from "react-redux";
 import { login } from "../../Redux/auth";
+import {Link} from "react-router-dom";
 
 class Login extends Component {
     constructor(props) {
@@ -48,6 +49,8 @@ class Login extends Component {
                 <input onChange={this.handleChange} value={inputs.password} name="password" type="password" placeholder="#" />
                 <button type="submit">Submit</button>
                 <p>{this.props.errMsg}</p>
+                <span>New to Jerb?</span>
+                <Link to="/">Sign Up</Link>
             </form>
         )
     }
