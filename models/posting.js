@@ -10,7 +10,17 @@ const PostSchema = new Schema({
         type: String,
         required: true
     },
-    salary: Number,
+    salary: {
+        type: Number,
+        default: 0
+    },
+    contact: String,
+    contactEmail: String,
+    contactPh: String,
+    offerAmt: {
+        type: Number,
+        default: 0
+    },
     datePosted: Date,
     applied: {
         type: Boolean,
@@ -21,7 +31,7 @@ const PostSchema = new Schema({
         default: false
     },
     notes: String,
-    user:{
+    user: {
         type: mongoose.Schema.Types.ObjectId,
         ref: "user",
         required: true

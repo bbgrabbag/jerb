@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 // packages
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import { connect } from "react-redux";
 import { signup } from "../../Redux/auth";
 
@@ -47,21 +47,24 @@ class Signup extends Component {
     }
     render() {
         let inputs = this.state.inputs;
+        let isAuthenticated = this.props.isAuthenticated;
         return (
-            <form onSubmit={this.handleSubmit}>
-                <input onChange={this.handleChange} value={inputs.fName} name="fName" type="text" placeholder="First Name" />
-                <input onChange={this.handleChange} value={inputs.lName} name="lName" type="text" placeholder="Last Name" />
-                <input onChange={this.handleChange} value={inputs.username} name="username" type="text" placeholder="@" />
-                <input onChange={this.handleChange} value={inputs.password} name="password" type="password" placeholder="#" />
-                <button type="submit">Submit</button>
-                <p>{this.props.errMsg}</p>
-                <span>Already a user?</span>
-                <Link to="/login">Login</Link>
-            </form>
+            isAuthenticated ?
+                <Redirect to="/profile-page" /> :
+                <form onSubmit={this.handleSubmit}>
+                    <input onChange={this.handleChange} value={inputs.fName} name="fName" type="text" placeholder="First Name" />
+                    <input onChange={this.handleChange} value={inputs.lName} name="lName" type="text" placeholder="Last Name" />
+                    <input onChange={this.handleChange} value={inputs.username} name="username" type="text" placeholder="@" />
+                    <input onChange={this.handleChange} value={inputs.password} name="password" type="password" placeholder="#" />
+                    <button type="submit">Submit</button>
+                    <p>{this.props.errMsg}</p>
+                    <span>Already a user?</span>
+                    <Link to="/login">Login</Link>
+                </form>
         )
     }
 }
 
-const mapStateToProps = state => ({ errMsg: state.auth.errMsg.signup })
+const mapStateToProps = state => ({ errMsg: state.auth.errMsg.signup, isAuthenticated: state.auth.isAuthenticated })
 
 export default connect(mapStateToProps, { signup })(Signup);

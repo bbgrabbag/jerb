@@ -74,6 +74,7 @@ postRoutes.route("/:id")
             } else {
                 res.status(200).send({
                     success: true,
+                    id: post._id,
                     msg: `Job listing for ${post.title} at ${post.company} on ${post.createdAt.toLocaleDateString()} was successfully removed!`
                 });
             }

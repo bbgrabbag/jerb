@@ -1,16 +1,34 @@
-import React from 'react';
+import React, { Component } from 'react';
+
+//packages
+import { connect } from "react-redux";
+import { loadData, removePosting, updatePosting } from "../../Redux/postings";
 
 //components
 import PostItem from "./PostItem";
+import Form from "./Form";
 
-function PostList(props) {
-    return (
-        <div>
-            {[{_id:"test"}].map((post, i)=>{
-                return <PostItem {...post} key={post._id}/>
-            })}
-        </div>
-    )
+class PostList extends Component {
+    componentDidMount() {
+        this.props.loadData();
+    }
+    render() {
+        let { data, filterBy, sortBy } = this.props.postings;
+        return (
+            <div>
+                <Form></Form>
+                <div>
+                    {
+                        data.filter(filterBy).sort(sortBy).map((post, i) => {
+                            return <PostItem post={post} updatePosting={this.props.updatePosting} removePosting={this.props.removePosting} key={post._id} />
+                        })
+                    }
+                </div>
+            </div>
+        )
+    }
 }
 
-export default PostList;
+const mapStateToProps = state => ({ postings: state.postings })
+
+export default connect(mapStateToProps, { loadData, removePosting, updatePosting })(PostList);
