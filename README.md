@@ -2,8 +2,9 @@
 
 -finished backend
 -front end signup/login functional
+-finished posting CRUD
 
 next:
--logout action
--router views
+-search, filtering and sorting postings
 -profile edits
+-STYLING!!!! WOOHOO
