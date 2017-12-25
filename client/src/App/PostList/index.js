@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 //packages
 import { connect } from "react-redux";
-import { loadData, removePosting, updatePosting } from "../../Redux/postings";
+import { loadData, removePosting, updatePosting, searchPostings } from "../../Redux/postings";
 
 //components
 import PostItem from "./PostItem";
@@ -16,7 +16,7 @@ class PostList extends Component {
         let { data, filterBy, sortBy } = this.props.postings;
         return (
             <div>
-                <Form></Form>
+                <Form searchPostings={this.props.searchPostings}></Form>
                 <div>
                     {
                         data.filter(filterBy).sort(sortBy).map((post, i) => {
@@ -31,4 +31,4 @@ class PostList extends Component {
 
 const mapStateToProps = state => ({ postings: state.postings })
 
-export default connect(mapStateToProps, { loadData, removePosting, updatePosting })(PostList);
+export default connect(mapStateToProps, { loadData, removePosting, updatePosting, searchPostings })(PostList);
