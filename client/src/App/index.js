@@ -19,7 +19,7 @@ import ProtectedRoute from "./ProtectedRoute";
 
 class App extends Component {
     componentDidMount() {
-        this.props.verify()
+        this.props.verify();
     }
     render() {
         return (
