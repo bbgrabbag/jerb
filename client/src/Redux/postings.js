@@ -37,6 +37,30 @@ export default (state = defaultState, action) => {
                         post;
                 })
             }
+        case "SEARCH_POSTINGS":
+            return {
+                ...state,
+                filterBy: (post, i) => {
+                    for (let key in post) {
+                        let keyVal = String(post[key]);
+                        let property = keyVal.toLowerCase();
+                        let { searchTerm } = action;
+                        if (property.includes(searchTerm))
+                            return true;
+                    }
+                    return false;
+                }
+            }
+        case "SORT_POSTINGS":
+            return {
+                ...state,
+                sortBy: action.sorter
+            }
+        case "FILTER_POSTING":
+            return {
+                ...state,
+                filterBy: action.filterer
+            }
         default:
             return state;
     }
@@ -97,5 +121,31 @@ export const updatePosting = (info, id) => {
             .catch((err) => {
                 console.error(err);
             });
+    }
+}
+
+export const searchPostings = searchTerm => {
+    return dispatch => {
+        dispatch({
+            type: "SEARCH_POSTINGS",
+            searchTerm: searchTerm.toLowerCase()
+        });
+    }
+}
+
+export const sortPostings = sorter => {
+    return dispatch => {
+        dispatch({
+            type: "SORT_POSTINGS",
+            sorter
+        });
+    }
+}
+export const filterPostings = filterer => {
+    return dispatch => {
+        dispatch({
+            type: "FILTER_POSTING",
+            filterer
+        });
     }
 }
