@@ -31,7 +31,6 @@ export default (state = defaultState, action) => {
             return {
                 ...state,
                 data: newData.map((post) => {
-                    console.log(action.updatedPost)
                     return post._id === action.updatedPost._id ?
                         action.updatedPost :
                         post;
@@ -112,7 +111,6 @@ export const updatePosting = (info, id) => {
     return dispatch => {
         axios.put(postingUrl + id, info)
             .then((response) => {
-                console.log(response);
                 dispatch({
                     type: "UPDATE_POSTING",
                     updatedPost: response.data.post
