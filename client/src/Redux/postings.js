@@ -49,11 +49,21 @@ export default (state = defaultState, action) => {
                             return true;
                     }
                     return false;
+                }
             }
-    }
+        case "SORT_POSTINGS":
+            return {
+                ...state,
+                sortBy: action.sorter
+            }
+        case "FILTER_POSTING":
+            return {
+                ...state,
+                filterBy: action.filterer
+            }
         default:
-    return state;
-}
+            return state;
+    }
 }
 
 const postingUrl = "http://localhost:8080/api/postings/"
@@ -119,6 +129,23 @@ export const searchPostings = searchTerm => {
         dispatch({
             type: "SEARCH_POSTINGS",
             searchTerm: searchTerm.toLowerCase()
+        });
+    }
+}
+
+export const sortPostings = sorter => {
+    return dispatch => {
+        dispatch({
+            type: "SORT_POSTINGS",
+            sorter
+        });
+    }
+}
+export const filterPostings = filterer => {
+    return dispatch => {
+        dispatch({
+            type: "FILTER_POSTING",
+            filterer
         });
     }
 }

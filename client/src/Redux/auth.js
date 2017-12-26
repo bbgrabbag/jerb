@@ -30,6 +30,8 @@ export default (state = defaultState, action) => {
             }
         case "LOGOUT":
             return { ...defaultState };
+        case "DELETE_ACT":
+            return { ...defaultState };
         default:
             return state;
     }
@@ -107,6 +109,22 @@ export const logout = () => {
         dispatch({
             type: "LOGOUT"
         });
+    }
+}
+export const deleteAct = (history) => {
+    return dispatch => {
+        axios.delete(profileUrl)
+            .then((response) => {
+                dispatch({
+                    type: "DELETE_ACT",
+                    msg: response.data.msg
+                });
+                localStorage.removeItem("token");
+                history.push("/");
+            })
+            .catch((err) => {
+                console.error(err);
+            })
     }
 }
 
