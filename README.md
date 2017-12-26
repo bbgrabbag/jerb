@@ -1,10 +1,7 @@
-12/24/17
+###UPDATES 12/25/17
 
--finished backend
--front end signup/login functional
--finished posting CRUD
+- MVP functionality: CRUD, user auth, filter/sort data, profile delete option
 
 next:
--search, filtering and sorting postings
--profile edits
--STYLING!!!! WOOHOO
+- Styling w/ CSS
+
