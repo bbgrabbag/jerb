@@ -1,10 +1,9 @@
-###UPDATES 12/26/17
+###UPDATES 12/27/17
 
-- Mobile stylings/layout complete
-- mobile responsive
+- responsive for all screens
+- font size determined
 
 next:
-- fonts, color theme
-- responsive tablet, desktop views
-- README about
+- fonts, color theme, animations
+
 

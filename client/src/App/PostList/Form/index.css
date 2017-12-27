@@ -20,3 +20,22 @@
     flex-wrap: wrap;
     width: 100%;
 }
+
+@media screen and (min-width: 500px){
+    .search-form{
+        width: 85%;
+        margin: auto;
+    }
+}
+@media screen and (min-width: 800px){
+    .search-form{
+        width: 65%;
+        margin: auto;
+    }
+}
+@media screen and (min-width: 1000px){
+    .search-form{
+        width: 50%;
+        margin: auto;
+    }
+}

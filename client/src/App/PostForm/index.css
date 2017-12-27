@@ -3,3 +3,41 @@
     width: 100%;
     justify-content: space-around;
 }
+@media screen and (min-width: 500px) {
+    .post-form {
+        width: 85%;
+        margin: auto;
+    }
+}
+@media screen and (min-width: 600px) {
+    .post-form {
+        width: 65%;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 990px) {
+    .post-form {
+        width: 65%;
+        margin: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .post-form input{
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .post-form {
+        width: 45%;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .post-form {
+        width: 35%;
+        margin: auto;
+    }
+}

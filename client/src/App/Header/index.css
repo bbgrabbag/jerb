@@ -3,9 +3,16 @@ header {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding:1em;
+    padding: 1em;
+    font-size: 1.2em;
 }
-i{
+
+i {
     padding-right: .1em;
 }
 
+@media screen and (min-width: 1200px) {
+    header{
+        font-size: 1.5em;
+    }
+}

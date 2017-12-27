@@ -47,8 +47,12 @@ class ProfilePage extends Component {
                     <p style={italicize}>@{username}</p>
                 </div>
                 <div className="profile-content">
-                    <Link to="add-post">Add new job listing</Link>
-                    <Link to="view-posts">View your current job listings</Link>
+                    <button>
+                        <Link to="add-post">Add new job listing</Link>
+                    </button>
+                    <button>
+                        <Link to="view-posts">View your current job listings</Link>
+                    </button>
                     <button onClick={logout}>Logout</button>
                 </div>
                 <div className="profile-delete">

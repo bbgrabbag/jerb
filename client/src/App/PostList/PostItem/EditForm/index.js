@@ -67,7 +67,7 @@ export default class EditForm extends Component {
         let { company, title, salary, contact, contactEmail, contactPh, offerAmt, datePosted, applied, responded, notes } = this.state.inputs;
         return (
             this.props.editing ?
-                <div>
+                <div className="edit-form">
                     <form onSubmit={this.handleSubmit}>
                         <input onChange={this.handleChange} value={company} name="company" type="text" placeholder="Company" required />
                         <input onChange={this.handleChange} value={title} name="title" type="text" placeholder="Title" required />

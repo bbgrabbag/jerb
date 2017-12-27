@@ -50,8 +50,8 @@ class Login extends Component {
         return (
             isAuthenticated ?
                 <Redirect to="/profile-page" /> :
-                <form onSubmit={this.handleSubmit}>
-                    <h3>Log In</h3>
+                <form className="auth-form" onSubmit={this.handleSubmit}>
+                    <h2>Log In</h2>
                     <input onChange={this.handleChange} value={inputs.username} name="username" type="text" placeholder="@" />
                     <input onChange={this.handleChange} value={inputs.password} name="password" type="password" placeholder="#" />
                     <button type="submit">Submit</button>

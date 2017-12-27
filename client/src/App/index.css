@@ -36,6 +36,7 @@ form select {
 input,
 textarea {
     width: 100%;
+    font-size: .9em;
     margin: .5em 0 .5em 0;
     text-align: center;
     color: whitesmoke;
@@ -43,9 +44,6 @@ textarea {
 }
 
 select {
-    /* width: 50%; */
-    /* margin: auto; */
-    /* text-align: center; */
     color: whitesmoke;
     background-color: rgba(128, 0, 0, .75);
 }
@@ -56,5 +54,27 @@ textarea::-webkit-input-placeholder {
 }
 
 button {
-    box-shadow: 1px 1px 3px silver
+    box-shadow: 1px 1px 3px silver;
+    font-size: .9em;
+}
+
+@media screen and (min-width: 500px) {
+    .auth-form {
+        width: 65%;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .auth-form {
+        width: 45%;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .auth-form {
+        width: 35%;
+        margin: auto;
+    }
 }

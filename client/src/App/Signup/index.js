@@ -54,8 +54,8 @@ class Signup extends Component {
         return (
             isAuthenticated ?
                 <Redirect to="/profile-page" /> :
-                <form onSubmit={this.handleSubmit}>
-                    <h3>Sign Up</h3>
+                <form className="auth-form"onSubmit={this.handleSubmit}>
+                    <h2>Sign Up</h2>
                     <input onChange={this.handleChange} value={inputs.fName} name="fName" type="text" placeholder="First Name" />
                     <input onChange={this.handleChange} value={inputs.lName} name="lName" type="text" placeholder="Last Name" />
                     <input onChange={this.handleChange} value={inputs.username} name="username" type="text" placeholder="@" />

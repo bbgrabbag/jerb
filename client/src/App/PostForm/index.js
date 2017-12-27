@@ -89,7 +89,7 @@ class PostForm extends Component {
     render() {
         let { company, title, salary, contact, contactEmail, contactPh, offerAmt, datePosted, applied, responded, notes } = this.state.inputs;
         return (
-            <form onSubmit={this.handleSubmit}>
+            <form className="post-form"onSubmit={this.handleSubmit}>
                 <input onChange={this.handleChange} value={company} name="company" type="text" placeholder="Company" required />
                 <input onChange={this.handleChange} value={title} name="title" type="text" placeholder="Title" required />
                 <input onChange={this.handleChange} value={salary} name="salary" type="number" placeholder="Advertised Salary" />
