@@ -1,0 +1,90 @@
+.info-wrapper {
+    display: grid;
+    position: relative;
+    grid-template-columns: 85% 15%;
+    grid-template-areas: "con btn";
+    padding: 2em 0 2em 0;
+    border-bottom: 1px dashed darkslategray;
+}
+
+.info-content {
+    width: 100%;
+    grid-area: con;
+}
+
+.info-content button {
+    width: 40%;
+    margin: auto;
+}
+
+.info-header {
+    display: flex;
+    align-items: baseline;
+    padding: .3em;
+}
+
+.info-header h2 {
+    width: 40%;
+}
+
+.info-header h3 {
+    width: 40%;
+}
+
+.buttons {
+    grid-area: btn;
+    width: 100%;
+    display: flex;
+    padding: .3em;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buttons button {
+    width: 100%;
+    padding: .7em;
+}
+
+.checkbox {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+}
+
+@media screen and (min-width: 500px) {
+    .info-content {
+        width: 85%;
+        margin: auto
+    }
+    .edit-form {
+        width: 75%;
+        margin: auto;
+    }
+    .edit-form form {
+        margin: auto;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    .edit-form input{
+        width: 50%;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .info-content {
+        width: 75%;
+        margin: auto
+    }
+    .edit-form {
+        width: 70%;
+        margin: auto;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .edit-form {
+        width: 50%;
+        margin: auto;
+    }
+}
+

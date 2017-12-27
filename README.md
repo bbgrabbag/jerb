@@ -1,7 +1,9 @@
-###UPDATES 12/25/17
+###UPDATES 12/27/17
 
-- MVP functionality: CRUD, user auth, filter/sort data, profile delete option
+- responsive for all screens
+- font size determined
 
 next:
-- Styling w/ CSS
+- fonts, color theme, animations
+
 

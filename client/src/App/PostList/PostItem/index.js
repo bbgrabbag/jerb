@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import EditForm from "./EditForm";
+import "./index.css";
 
 export default class PostItem extends Component {
     constructor(props) {
@@ -27,35 +28,44 @@ export default class PostItem extends Component {
     }
 
     render() {
-        let toggleView = { display: this.state.toggleView ? "inherit" : "none" }
+        let { toggleEdit, toggleView } = this.state;
+
+        let viewStyle = { display: toggleView ? "inherit" : "none" }
+        let btnPos = { justifyContent: toggleEdit ? "flex-end" : toggleView ? "center" : "flex-start" }
         let { _id, company, title, salary, notes, createdAt, applied, responded, contactEmail, contact, contactPh, offerAmt, datePosted } = this.props.post;
         return (
-            <div>
-                <button onClick={this.toggleEdit}>Edit</button>
-                <button onClick={() => this.props.removePosting(_id)}>X</button>
-                <EditForm toggleEdit={this.toggleEdit}updatePosting={this.props.updatePosting}editing={this.state.toggleEdit} {...this.props.post} />
-                <div style={{ display: this.state.toggleEdit ? "none" : "inherit" }}>
-                    <h2>{company}</h2>
-                    <h3>{title}</h3>
-                    <p>Application Status: {applied ? "Applied" : "Hasn't applied"}</p>
-                    <p>Response Status: {responded ? "Responded" : "Hasn't responded"}</p>
-                    <p>Date created: {new Date(createdAt).toLocaleString()}</p>
-                    <button style={{ display: this.state.toggleView ? "none" : "inherit" }} onClick={this.toggleView}>See More</button>
-                    <p style={toggleView}>Contact: {contact}</p>
-                    <p style={toggleView}>Contact Email: {contactEmail}</p>
-                    <p style={toggleView}>Contact Phone: {contactPh}</p>
-                    <p style={toggleView}>Advertised salary: {salary ? salary.toLocaleString('en-US', {
-                        style: 'currency',
-                        currency: 'USD',
-                    }) : ""}</p>
-                    <p style={toggleView}>Offer amount: {offerAmt ? offerAmt.toLocaleString('en-US', {
-                        style: 'currency',
-                        currency: 'USD',
-                    }) : ""}</p>
-                    <p style={toggleView}>Date posted: {new Date(datePosted).toLocaleString()}</p>
-                    <p style={toggleView}>Notes: {notes}</p>
-                    <button style={toggleView} onClick={this.toggleView}>See Less</button>
+            <div className="info-wrapper">
+                <div style={btnPos} className="buttons" >
+                    <button onClick={this.toggleEdit}><i className="fa fa-pencil"></i></button>
+                    <button onClick={() => this.props.removePosting(_id)}><i className="fa fa-trash"></i></button>
                 </div>
+                {toggleEdit ?
+                    <EditForm toggleEdit={this.toggleEdit} updatePosting={this.props.updatePosting} editing={this.state.toggleEdit} {...this.props.post} /> :
+                    <div className="info-content" style={{ display: toggleEdit ? "none" : "inherit" }}>
+                        <div className="info-header">
+                            <h2>{company}</h2>
+                            <h3>{title}</h3>
+                        </div>
+                        <p>Application Status: {applied ? "Applied" : "Hasn't applied"}</p>
+                        <p>Response Status: {responded ? "Responded" : "Hasn't responded"}</p>
+                        <p>Date created: {new Date(createdAt).toLocaleString()}</p>
+                        <button style={{ display: toggleView ? "none" : "inherit" }} onClick={this.toggleView}><i className="fa fa-angle-down"></i></button>
+                        <br />
+                        <p style={viewStyle}>Contact: {contact}</p>
+                        <p style={viewStyle}>Contact Email: {contactEmail}</p>
+                        <p style={viewStyle}>Contact Phone: {contactPh}</p>
+                        <p style={viewStyle}>Advertised salary: {salary ? salary.toLocaleString('en-US', {
+                            style: 'currency',
+                            currency: 'USD',
+                        }) : ""}</p>
+                        <p style={viewStyle}>Offer amount: {offerAmt ? offerAmt.toLocaleString('en-US', {
+                            style: 'currency',
+                            currency: 'USD',
+                        }) : ""}</p>
+                        <p style={viewStyle}>Date posted: {new Date(datePosted).toLocaleString()}</p>
+                        <p style={viewStyle}>Notes: {notes}</p>
+                        <button style={viewStyle} onClick={this.toggleView}><i className="fa fa-angle-up"></i></button>
+                    </div>}
             </div>
         )
     }

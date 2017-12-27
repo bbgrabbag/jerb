@@ -1,0 +1,13 @@
+footer {
+    grid-area: ftr;
+    font-size: .7em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (min-width:1200px) {
+    footer{
+        font-size: .9em;
+    }
+}

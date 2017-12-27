@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    text-decoration-line: none;
+    list-style: none;
+}
+
+.app-wrapper {
+    padding: 0 1em 0 1em;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-areas: "nav" "con" "hdr" "ftr"
+}
+
+.content-wrapper {
+    grid-area: con;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+}
+
+form>input,
+form h3,
+form p,
+form button,
+form select {
+    margin: .1em 0 0 0;
+    padding: .6em;
+    width: 100%;
+}
+
+input,
+textarea {
+    width: 100%;
+    font-size: .9em;
+    margin: .5em 0 .5em 0;
+    text-align: center;
+    color: whitesmoke;
+    background-color: rgba(128, 0, 0, .75);
+}
+
+select {
+    color: whitesmoke;
+    background-color: rgba(128, 0, 0, .75);
+}
+
+input::-webkit-input-placeholder,
+textarea::-webkit-input-placeholder {
+    color: whitesmoke;
+}
+
+button {
+    box-shadow: 1px 1px 3px silver;
+    font-size: .9em;
+}
+
+@media screen and (min-width: 500px) {
+    .auth-form {
+        width: 65%;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .auth-form {
+        width: 45%;
+        margin: auto;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .auth-form {
+        width: 35%;
+        margin: auto;
+    }
+}

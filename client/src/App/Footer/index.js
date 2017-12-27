@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
+import "./index.css";
 
 function Footer(props) {
     return (
         <footer>
-            <span>&copy;2017</span>
-            <span>Built with React, CSS3, Bootstrap 4</span>
+            <span>&copy;2017 Built with ReactJS, CSS3, MongoDB, & NodeJS</span>
         </footer>
     )
 }
