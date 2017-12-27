@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import "./index.css";
 import moment from "moment";
 import { submitPosting } from "../../Redux/postings";
 import { connect } from "react-redux";
@@ -23,6 +24,9 @@ class PostForm extends Component {
         }
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
+    }
+    componentDidMount() {
+        window.scrollTo(0, 0);
     }
     handleChange(e) {
         e.persist();
@@ -94,10 +98,18 @@ class PostForm extends Component {
                 <input onChange={this.handleChange} value={contactPh} name="contactPh" type="text" placeholder="Contact Phone" />
                 <input onChange={this.handleChange} value={offerAmt} name="offerAmt" type="number" placeholder="Offer Amount" />
                 <span>Date Posted: <input onChange={this.handleChange} value={moment(datePosted).format("YYYY-MM-DD")} name="datePosted" type="date" /></span>
-                <span>Applied? <input onChange={this.handleChange} name="applied" checked={applied} type="checkbox" /></span>
-                <span>Responded? <input onChange={this.handleChange} name="responded" checked={responded} type="checkbox" /></span>
-                <textarea onChange={this.handleChange} value={notes} style={{ overflow: "auto", resize: "none" }} name="notes" id="notes" cols="30" rows="10" placeholder="Notes"></textarea>
-                <button type="submit">+</button>
+                <div className="checkbox">
+                    <div>
+                        <input id="new-applied"onChange={this.handleChange} name="applied" checked={applied} type="checkbox" />
+                        <label htmlFor="new-applied">Applied? </label>
+                    </div>
+                    <div>
+                        <input id="new-responded"onChange={this.handleChange} name="responded" checked={responded} type="checkbox" />
+                        <label htmlFor="new-responded">Responded? </label>
+                    </div>
+                </div>
+                <textarea onChange={this.handleChange} value={notes} style={{ overflow: "auto" }} name="notes" id="notes" cols="30" rows="5" placeholder="Notes"></textarea>
+                <button type="submit"><i className="fa fa-plus"></i></button>
             </form>
         )
     }

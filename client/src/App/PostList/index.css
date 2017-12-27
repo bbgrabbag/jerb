@@ -1,0 +1,17 @@
+.list-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.list-content {
+    overflow: scroll;
+    height: 100%;
+}
+.list-content-msg{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

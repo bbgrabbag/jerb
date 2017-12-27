@@ -16,6 +16,9 @@ class Login extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
     }
+    componentDidMount() {
+        window.scrollTo(0, 0);
+    }
     handleChange(e) {
         e.persist();
         this.setState((prevState) => {
@@ -48,12 +51,12 @@ class Login extends Component {
             isAuthenticated ?
                 <Redirect to="/profile-page" /> :
                 <form onSubmit={this.handleSubmit}>
+                    <h3>Log In</h3>
                     <input onChange={this.handleChange} value={inputs.username} name="username" type="text" placeholder="@" />
                     <input onChange={this.handleChange} value={inputs.password} name="password" type="password" placeholder="#" />
                     <button type="submit">Submit</button>
                     <p>{this.props.errMsg}</p>
-                    <span>New to Jerb?</span>
-                    <Link to="/">Sign Up</Link>
+                    <span>New to Jerb? <Link to="/signup">Sign Up</Link></span>
                 </form>
         )
     }

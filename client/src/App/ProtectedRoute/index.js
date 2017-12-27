@@ -4,11 +4,11 @@ import { Redirect, Route } from "react-router-dom";
 
 class ProtectedRoute extends Component {
     render() {
-        let { path, component } = this.props;
+        let { path, component, isAuthenticated } = this.props;
         return (
-            this.props.isAuthenticated ?
+            isAuthenticated ?
                 <Route path={path} component={component} /> :
-                <Redirect to="/login" />
+                <Redirect to="/" />
         )
     }
 }

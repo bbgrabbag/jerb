@@ -1,24 +1,23 @@
 import React from 'react';
+import "./index.css";
 
 //packages
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
-import { logout } from "../../Redux/auth";
 
 function Nav(props) {
-    let isAuthenticated = props.isAuthenticated;
+    let { isAuthenticated } = props;
+    let style = { display: isAuthenticated ? "flex" : "none" }
     return (
-        <nav>
-            {isAuthenticated ? null : <Link to="/">Sign Up</Link>}
-            {isAuthenticated ? null : <Link to="/login">Log In</Link>}
-            {isAuthenticated ? <Link to="/profile-page">Profile</Link> : null}
-            {isAuthenticated ? <Link to="/add-post">+</Link> : null}
-            {isAuthenticated ? <Link to="/view-posts">Postings</Link> : null}
-            {isAuthenticated ? <button onClick={props.logout}>Logout</button> : null}
+        <nav style={style}>
+            <Link to="/profile-page"><i className="fa fa-home"></i></Link>
+            <Link to="/add-post"><i className="fa fa-plus"></i></Link>
+            <Link to="/view-posts"><i className="fa fa-eye"></i>
+</Link>
         </nav>
     )
 }
 
 const mapStateToProps = state => ({ isAuthenticated: state.auth.isAuthenticated });
 
-export default connect(mapStateToProps, { logout })(Nav);
+export default withRouter(connect(mapStateToProps, {})(Nav));
