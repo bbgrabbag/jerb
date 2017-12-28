@@ -19,7 +19,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use("/api", apiRoutes);
 // app.get("/")
 
-mongoose.connect("mongodb://jerb-vschool:vschool@ds163826.mlab.com:63826/jerb", () => {
+mongoose.connect(config.db, () => {
     console.log("Connected to MLab");
     app.listen(config.port, () => {
         console.log("Connected to port " + config.port);
