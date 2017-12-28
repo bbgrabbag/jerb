@@ -48,6 +48,10 @@
     color: whitesmoke;
     background-color: rgba(178, 34, 34, .7);
 }
+.profile-delete button:hover {
+    background: none;
+    color: #888888;
+}
 
 .modal-custom {
     position: absolute;
