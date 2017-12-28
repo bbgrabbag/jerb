@@ -4,13 +4,17 @@
 .search-form {
     display: flex;
     flex-direction: column;
-    width: 100%;
+    width: 95%;
+    margin: auto;
 }
 
 .adv-filter-wrapper {
     display: flex;
     flex-direction: column;
     width: 100%;
+}
+.adv-filter-btn:hover{
+    transform: scale(1) !important;
 }
 
 .radio-filter {

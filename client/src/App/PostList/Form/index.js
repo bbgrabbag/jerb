@@ -144,9 +144,9 @@ export default class Form extends Component {
             <div className="form-wrapper">
                 <form className="search-form">
                     <input onChange={this.handleSearch} value={this.state.search} name="search" type="text" placeholder="Search" />
-                    <button style={{ display: showAdvFilter ? "none" : "inline-block", textAlign: "center" }} onClick={this.toggleAdvFilter}>Advanced Filter <i className="fa fa-angle-down"></i></button>
+                    <button className="adv-filter-btn" style={{ display: showAdvFilter ? "none" : "inline-block", textAlign: "center" }} onClick={this.toggleAdvFilter}>Advanced Filter <i className="fa fa-angle-down"></i></button>
                     <div className="adv-filter-wrapper" style={filterStyle}>
-                        <button onClick={this.toggleAdvFilter}><i className="fa fa-angle-up"></i></button>
+                        <button className="adv-filter-btn"onClick={this.toggleAdvFilter}><i className="fa fa-angle-up"></i></button>
                         <div className="radio-filter">
                             <div>
                                 <input onChange={this.handleFilter} checked={this.state.filter === "all"} type="radio" name="status" id="all" />
@@ -178,7 +178,7 @@ export default class Form extends Component {
                             </select>
                         </div>
                     </div>
-                    <button onClick={this.resetSearch}>Reset</button>
+                    <button  onClick={this.resetSearch}>Reset</button>
                 </form>
             </div>
         )

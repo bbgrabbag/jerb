@@ -9,11 +9,11 @@ function Nav(props) {
     let { isAuthenticated } = props;
     let style = { display: isAuthenticated ? "flex" : "none" }
     return (
-        <nav style={style}>
+        <nav className="nav-links" style={style}>
             <Link to="/profile-page"><i className="fa fa-home"></i></Link>
             <Link to="/add-post"><i className="fa fa-plus"></i></Link>
             <Link to="/view-posts"><i className="fa fa-eye"></i>
-</Link>
+            </Link>
         </nav>
     )
 }

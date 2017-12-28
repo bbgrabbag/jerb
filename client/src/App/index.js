@@ -25,7 +25,7 @@ class App extends Component {
     render() {
         let { loading, isAuthenticated } = this.props;
         let style = {
-            gridTemplateRows: isAuthenticated ? `15vh 85vh 15vh 10vh` : `15vh 60vh 15vh 10vh`
+            gridTemplateRows: isAuthenticated ? `15% 85% 15% 10%` : `15% 60% 15% 10%`
         }
         return (
             <div className="app-wrapper" style={style} >
