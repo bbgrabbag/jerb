@@ -88,6 +88,10 @@ form {
     align-items: center;
 }
 
+.auth-err-msg {
+    color: firebrick;
+}
+
 input:focus,
 textarea:focus,
 select:focus {

@@ -55,7 +55,7 @@ class Login extends Component {
                     <input onChange={this.handleChange} value={inputs.username} name="username" type="text" placeholder="@" />
                     <input onChange={this.handleChange} value={inputs.password} name="password" type="password" placeholder="#" />
                     <button type="submit">Submit</button>
-                    <p>{this.props.errMsg}</p>
+                    <p className="auth-err-msg">{this.props.errMsg}</p>
                     <span>New to Jerb? <Link to="/signup">Sign Up</Link></span>
                 </form>
         )
