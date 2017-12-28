@@ -35,9 +35,6 @@ class ProfilePage extends Component {
     }
     render() {
         let { fName, lName, username } = this.props.user;
-        // let modal = {
-        //     display: this.state.toggle ? "inherit" : "none"
-        // }
         let { logout } = this.props;
         let italicize = { fontStyle: "italic" }
         return (
@@ -47,12 +44,8 @@ class ProfilePage extends Component {
                     <p style={italicize}>@{username}</p>
                 </div>
                 <div className="profile-content">
-                    <button>
-                        <Link to="add-post">Add new job listing</Link>
-                    </button>
-                    <button>
-                        <Link to="view-posts">View your current job listings</Link>
-                    </button>
+                    <Link to="add-post">Add new job listing</Link>
+                    <Link to="view-posts">View your current job listings</Link>
                     <button onClick={logout}>Logout</button>
                 </div>
                 <div className="profile-delete">
@@ -62,7 +55,7 @@ class ProfilePage extends Component {
                     <Modal.Header bsClass="modal-header-custom" closeButton>
                         <Modal.Title bsClass="modal-title-custom">Warning</Modal.Title>
                     </Modal.Header>
-                    <Modal.Body>
+                    <Modal.Body bsClass="modal-body-custom">
                         <p>Are you sure you want to delete your account?</p>
                         <p>This will remove all data associated with <span style={{ fontStyle: "italic" }}>@{username}</span></p>
                         <button onClick={() => this.props.deleteAct(this.props.history)}>Yes</button>

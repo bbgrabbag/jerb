@@ -1,10 +1,11 @@
 .info-wrapper {
     display: grid;
     position: relative;
+    background-color: rgba(240, 255, 255, .5);
     grid-template-columns: 85% 15%;
     grid-template-areas: "con btn";
     padding: 2em 0 2em 0;
-    border-bottom: 1px dashed darkslategray;
+    border-bottom: 1px solid darkslategray;
 }
 
 .info-content {
@@ -24,16 +25,16 @@
 }
 
 .info-header h2 {
-    width: 40%;
+    width: 30%;
 }
 
 .info-header h3 {
-    width: 40%;
+    width: 30%;
 }
 
 .buttons {
     grid-area: btn;
-    width: 100%;
+    width: 98%;
     display: flex;
     padding: .3em;
     flex-direction: column;

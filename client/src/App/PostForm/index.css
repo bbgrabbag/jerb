@@ -1,14 +1,18 @@
-.checkbox{
+
+
+.checkbox {
     display: flex;
     width: 100%;
     justify-content: space-around;
 }
+
 @media screen and (min-width: 500px) {
     .post-form {
         width: 85%;
         margin: auto;
     }
 }
+
 @media screen and (min-width: 600px) {
     .post-form {
         width: 65%;
@@ -23,7 +27,7 @@
         flex-direction: row;
         flex-wrap: wrap;
     }
-    .post-form input{
+    .post-form input {
         width: 50%;
     }
 }

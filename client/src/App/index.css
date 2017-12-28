@@ -4,8 +4,69 @@
     text-decoration-line: none;
     list-style: none;
 }
+body{
+    background-image: url("../images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat; 
+    background-attachment: fixed;
+    
+}
+
+input,
+textarea,
+select {
+    font-family: "GillSans-Light";
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: "STSongti-SC-Light";
+}
+
+p,
+span {
+    font-family: "STYuanti-TC-Light";
+}
+
+p,
+input,
+button,
+label {
+    letter-spacing: 1px;
+}
+label{
+    color: grey;
+}
+
+a,
+button {
+    margin: .1em 0;
+    font-family: "STHeitiTC-Light";
+    color: #888888;
+    transition: all .1s linear .1s;
+}
+
+button a {
+    width: 100%;
+    height: 100%;
+}
+
+a:hover,
+button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+    transition: all .1s linear .1s;
+}
+
+.nav-links a:hover {
+    text-shadow: 2px 2px 2px black;
+}
 
 .app-wrapper {
+    height: 680px;
     padding: 0 1em 0 1em;
     display: grid;
     grid-template-columns: 1fr;
@@ -14,6 +75,7 @@
 
 .content-wrapper {
     grid-area: con;
+    overflow-y: auto;
 }
 
 form {
@@ -21,6 +83,20 @@ form {
     flex-direction: column;
     text-align: center;
     align-items: center;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+    background-color: whitesmoke;
+    color: rgba(250, 166, 82, 0.9);
+    transition: color .2s ease-in;
+}
+
+input:focus::-webkit-input-placeholder,
+{
+    color: rgba(250, 166, 82, .9);
+    background-color: whitesmoke;
 }
 
 form>input,
@@ -37,15 +113,16 @@ input,
 textarea {
     width: 100%;
     font-size: .9em;
+    font-weight: 600;
     margin: .5em 0 .5em 0;
     text-align: center;
     color: whitesmoke;
-    background-color: rgba(128, 0, 0, .75);
+    background-color: rgba(250, 166, 82, .9);
 }
 
 select {
     color: whitesmoke;
-    background-color: rgba(128, 0, 0, .75);
+    background-color: rgba(250, 166, 82, 1);
 }
 
 input::-webkit-input-placeholder,
@@ -56,6 +133,7 @@ textarea::-webkit-input-placeholder {
 button {
     box-shadow: 1px 1px 3px silver;
     font-size: .9em;
+    border: none;
 }
 
 @media screen and (min-width: 500px) {

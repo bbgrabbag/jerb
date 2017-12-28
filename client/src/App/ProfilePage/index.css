@@ -1,14 +1,16 @@
 .profile-wrapper {
     height: 100%;
+    position: relative;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 15% 50% 35%;
+    grid-template-rows: 15% 40% 45%;
     grid-template-areas: "hdr" "con" "rm"
 }
 
 .profile-header {
     grid-area: hdr;
     font-size: 1.5em;
+    color: grey;
 }
 
 .profile-content {
@@ -20,8 +22,15 @@
     grid-area: con;
 }
 
-.profile-content a {
-    padding: .7em;
+.profile-content a,
+.profile-content button {
+    padding: .3em;
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+.profile-content a:hover{
+    text-decoration: underline;
 }
 
 .profile-delete {
@@ -34,22 +43,18 @@
 }
 
 .profile-delete button {
-    width: 100%;
+    width: 80%;
     height: 5em;
     color: whitesmoke;
-    background-color: firebrick;
-}
-
-.modal-container .modal,
-.modal-container .modal-backdrop {
-    position: absolute;
-}
-
-.modal-container {
-    position: absolute;
+    background-color: rgba(178, 34, 34, .7);
 }
 
 .modal-custom {
+    position: absolute;
+    top: 50%;
+    left: 40%;
+    background-color: rgba(200,150,400, .9);
+    transform: translateX(-50%);
     padding: 1em;
     text-align: center;
 }
@@ -66,6 +71,10 @@
     font-size: 1.4em;
     color: firebrick;
     text-align: center;
+}
+
+.modal-body-custom button {
+    margin: .2em;
 }
 
 @media screen and (min-width:500px) {

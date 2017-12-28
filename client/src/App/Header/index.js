@@ -1,13 +1,16 @@
 import React from 'react';
 import "./index.css";
+import { Link, withRouter } from "react-router-dom";
 
 function Header(props) {
     return (
-        <header>
-            <h1><i className="fa fa-briefcase" aria-hidden="true"></i>Jerb.</h1>
-            <p>Track your job search in one place</p>
+        <header className="nav-links">
+            <Link to="/">
+                <h1><i className="fa fa-briefcase" aria-hidden="true"></i>Jerb.</h1>
+            </Link>
+            <p>Where the jerbs at</p>
         </header>
     )
 }
 
-export default Header;
+export default withRouter(Header);

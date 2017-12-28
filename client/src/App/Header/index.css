@@ -1,10 +1,17 @@
 header {
+    width: 100%;
+    margin: auto;
     grid-area: hdr;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 1em;
     font-size: 1.2em;
+    background-color: rgba(127, 191, 255, 0.8);
+}
+
+header a, header p{
+    color: whitesmoke;
 }
 
 i {
@@ -12,7 +19,7 @@ i {
 }
 
 @media screen and (min-width: 1200px) {
-    header{
+    header {
         font-size: 1.5em;
     }
 }
