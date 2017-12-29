@@ -37,8 +37,8 @@ export default (state = defaultState, action) => {
     }
 }
 
-const profileUrl = "http://localhost:8080/api/profile/";
-const authUrl = "http://localhost:8080/api/auth/"
+const profileUrl = "/api/profile/";
+const authUrl = "/api/auth/"
 
 function authorize(success, user) {
     return {

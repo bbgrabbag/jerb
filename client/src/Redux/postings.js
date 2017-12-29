@@ -65,7 +65,7 @@ export default (state = defaultState, action) => {
     }
 }
 
-const postingUrl = "http://localhost:8080/api/postings/"
+const postingUrl = "/api/postings/"
 
 export const loadData = () => {
     return dispatch => {
