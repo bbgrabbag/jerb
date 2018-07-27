@@ -21,7 +21,7 @@ SECRET="<put your secret here>"
 - If you don't already have nodemon: `npm install -g nodemon`
 - From main folder: `nodemon index.js` starts the ExpressJS server
 - You're ready to start contributing!!
-
+<!-- MUFFINS R EXEMPLARY!!!!!!! -->
 
 
 
