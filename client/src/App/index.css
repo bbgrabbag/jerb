@@ -1,21 +1,21 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    text-decoration-line: none;
-    list-style: none;
+  box-sizing: border-box;
+  margin: 0;
+  text-decoration-line: none;
+  list-style: none;
 }
 
 body {
-    background-image: url("../images/background.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 input,
 textarea,
 select {
-    font-family: "GillSans-Light";
+  font-family: 'GillSans-Light';
 }
 
 h1,
@@ -23,143 +23,142 @@ h2,
 h3,
 h4,
 h5 {
-    font-family: "STSongti-SC-Light";
+  font-family: 'STSongti-SC-Light';
 }
 
 p,
 span {
-    font-family: "STYuanti-TC-Light";
+  font-family: 'STYuanti-TC-Light';
 }
 
 p,
 input,
 button,
 label {
-    letter-spacing: 1px;
+  letter-spacing: 1px;
 }
 
 label {
-    color: grey;
+  color: grey;
 }
 
 a,
 button {
-    margin: .1em 0;
-    font-family: "STHeitiTC-Light";
-    color: #888888;
-    padding: 3px;
-    transition: all .1s linear .1s;
+  margin: 0.1em 0;
+  font-family: 'STHeitiTC-Light';
+  color: #888888;
+  padding: 3px;
+  transition: all 0.1s linear 0.1s;
 }
 
 button:hover {
-    cursor: pointer;
-    background: none;
-    color: #888888;
-    transition: all .1s linear .1s;
+  cursor: pointer;
+  background: none;
+  color: #888888;
+  transition: all 0.1s linear 0.1s;
 }
 
 a:hover {
-    cursor: pointer;
-    transform: scale(1.1);
-    transition: all .1s linear .1s;
+  cursor: pointer;
+  transform: scale(1.1);
+  transition: all 0.1s linear 0.1s;
 }
 
 .nav-links a:hover {
-    text-shadow: 2px 2px 2px black;
+  text-shadow: 2px 2px 2px black;
 }
 
 .app-wrapper {
-    height: 680px;
-    padding: 0 1em 0 1em;
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-areas: "nav" "con" "hdr" "ftr"
+  height: 680px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas: 'nav' 'con' 'hdr' 'ftr';
 }
 
 .content-wrapper {
-    grid-area: con;
-    overflow-y: auto;
+  grid-area: con;
+  overflow-y: auto;
 }
 
 form {
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }
 
 .auth-err-msg {
-    color: firebrick;
+  color: firebrick;
 }
 
 input:focus,
 textarea:focus,
 select:focus {
-    background-color: whitesmoke;
-    color: rgba(250, 166, 82, 0.9);
-    transition: color .2s ease-in;
+  background-color: whitesmoke;
+  color: rgba(250, 166, 82, 0.9);
+  transition: color 0.2s ease-in;
 }
 
-input:focus::-webkit-input-placeholder,
-{
-    color: rgba(250, 166, 82, .9);
-    background-color: whitesmoke;
+input:focus::-webkit-input-placeholder {
+  color: rgba(250, 166, 82, 0.9);
+  background-color: whitesmoke;
 }
 
-form>input,
+form > input,
 form h3,
 form p,
 form button,
 form select {
-    margin: .1em 0 0 0;
-    padding: .6em;
-    width: 100%;
+  margin: 0.1em 0 0 0;
+  padding: 0.6em;
+  width: 100%;
 }
 
 input,
 textarea {
-    width: 100%;
-    font-size: .9em;
-    font-weight: 600;
-    margin: .5em 0 .5em 0;
-    text-align: center;
-    color: whitesmoke;
-    background-color: rgba(250, 166, 82, .9);
+  width: 100%;
+  font-size: 0.9em;
+  font-weight: 600;
+  margin: 0.5em 0 0.5em 0;
+  text-align: center;
+  color: whitesmoke;
+  background-color: rgba(250, 166, 82, 0.9);
 }
 
 select {
-    color: whitesmoke;
-    background-color: rgba(250, 166, 82, 1);
+  color: whitesmoke;
+  background-color: rgba(250, 166, 82, 1);
 }
 
 input::-webkit-input-placeholder,
 textarea::-webkit-input-placeholder {
-    color: whitesmoke;
+  color: whitesmoke;
 }
 
 button {
-    box-shadow: 1px 1px 3px silver;
-    font-size: .9em;
-    border: none;
+  box-shadow: 1px 1px 3px silver;
+  font-size: 0.9em;
+  border: none;
 }
 
 @media screen and (min-width: 500px) {
-    .auth-form {
-        width: 65%;
-        margin: auto;
-    }
+  .auth-form {
+    width: 65%;
+    margin: auto;
+  }
 }
 
 @media screen and (min-width: 800px) {
-    .auth-form {
-        width: 45%;
-        margin: auto;
-    }
+  .auth-form {
+    width: 45%;
+    margin: auto;
+  }
 }
 
 @media screen and (min-width: 1200px) {
-    .auth-form {
-        width: 35%;
-        margin: auto;
-    }
+  .auth-form {
+    width: 35%;
+    margin: auto;
+  }
 }
