@@ -12,17 +12,3 @@ nav {
 nav a {
     color: whitesmoke;
 }
-
-@media screen and (min-width: 600px) {
-    nav {
-        width: 80%;
-        margin: auto;
-    }
-}
-
-@media screen and (min-width: 1000px) {
-    nav {
-        width: 60%;
-        margin: auto;
-    }
-}
