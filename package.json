@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "nodemon index.js",
     "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
   },
   "engines": {
@@ -28,5 +29,8 @@
     "express-jwt": "^5.3.0",
     "jsonwebtoken": "^8.1.0",
     "mongoose": "^4.10.8"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.6"
   }
 }
