@@ -3,7 +3,7 @@ nav {
     width: 100%;
     margin: auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     font-size: 2em;
     padding: .8em;
@@ -11,4 +11,5 @@ nav {
 }
 nav a {
     color: whitesmoke;
+    padding: 0 10px;
 }
