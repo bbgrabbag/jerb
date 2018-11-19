@@ -1,14 +1,22 @@
-# Jerb
+# [Jerb]( http://www.jerb.life/)
+#### Sponsored by [VSchool](http://vschool.io/)
+###### Admin  [Ben Turner](http://btdev.surge.sh)
 
-**Jerb** is a simple UI for tracking your job search.
+## Purpose
+One of the best ways to prove your mettle as a dev is to contribute to open source projects. However, it can be daunting as a new bootcamp/cs grad to know where to start. Jerb is intended to be an approachable, small scale project that requires only a foundational understanding of the MERN stack to make meaningful contributions.
 
-Add job listings you're interested in. Search and sort by name, date, application status, etc.
+## The App
+Jerb is a very basic CRUD app that allows users to track his/her job searches.
 
-This is intended to be an open source project for coding students who want to try their hand at contributing to a smaller scale project. 
+#### Technologies
+- React/Redux
+- Mongoose
+- Express
 
 ---
 
 ## How to contribute
+
 ### Set up:
 - Fork repository
 - Clone onto your local machine `git clone <your-forked-repo-url>`
@@ -23,8 +31,17 @@ This is intended to be an open source project for coding students who want to tr
 - From root, `npm run dev`
 - From `/client`, `npm run start`
 
-### Make a branch
+### Decide what you'd like to improve
+- Check the issues tab for the most recent bugs/issues
+- Test the app as a user to find potential UX/UI improvements
+- Run performance tests to see where efficiency could be improved
+- Add a new feature
 
+### Make a branch
+- Use the following naming conventions when branching: 
+  - prefix with `/feature` for new features
+  - prefix with `/bugfix` for bug fixes
+  - reference the issue ID in the branch name when fixing issues.
 - Once you know what you'd like to add/change, make a new branch and start coding: `git checkout -b <your-branch>`
 
 ### Contribute!
