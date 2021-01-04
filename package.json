@@ -20,7 +20,7 @@
   "author": "Ben Turner",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.17.1",
+    "axios": "^0.21.1",
     "bcrypt": "^3.0.0",
     "body-parser": "^1.18.2",
     "cors": "^2.8.4",
